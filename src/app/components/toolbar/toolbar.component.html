@@ -1,0 +1,79 @@
+<div class="container">
+    <!-- Toolbar container -->
+    <mat-toolbar>
+        <!-- Logo and title -->
+        <mat-icon class="me-2 icon-logo fw-bolder">code</mat-icon>
+        <span class="mx-2 fw-light">HAMHAM</span>
+
+        <!-- Spacer for alignment -->
+        <span style="flex: 1 1 auto;"></span>
+
+        <!-- Desktop links -->
+        <div class="d-none d-md-flex">
+            <!-- LinkedIn link -->
+            <a target="_blank" mat-button href="https://www.linkedin.com/in/dvhamham/" class="rounded-3 fs-6">
+                {{ 'linkedin' | translate }}
+            </a>
+
+            <!-- Separator -->
+            <span class="mx-1 d-flex align-items-center text-secondary">|</span>
+
+            <!-- Facebook link -->
+            <a target="_blank" mat-button href="https://www.facebook.com/dvhamham" class="rounded-3 fs-6">
+                {{ 'facebook' | translate }}
+            </a>
+
+            <!-- Separator -->
+            <span class="mx-1 d-flex align-items-center text-secondary">|</span>
+
+            <!-- WhatsApp link -->
+            <a target="_blank" mat-button href="https://wa.me/212670758085" class="rounded-3 fs-6">
+                {{ 'whatsapp' | translate }}
+            </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button class="d-md-none" mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <!-- Mobile menu -->
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <a target="_blank" mat-button href="https://www.linkedin.com/in/dvhamham/" class="rounded-3 fs-6">
+                    {{ 'linkedin' | translate }}
+                </a>
+            </button>
+            <button mat-menu-item>
+                <a target="_blank" mat-button href="https://www.facebook.com/dvhamham" class="rounded-3 fs-6">
+                    {{ 'facebook' | translate }}
+                </a>
+            </button>
+            <button mat-menu-item>
+                <a target="_blank" mat-button href="https://wa.me/212670758085" class="rounded-3 fs-6">
+                    {{ 'whatsapp' | translate }}
+                </a>
+            </button>
+        </mat-menu>
+
+        <!-- Language selector -->
+        <a [matMenuTriggerFor]="laguauge" mat-button class="rounded-3 fs-6">
+            <mat-icon>arrow_drop_down</mat-icon>
+            {{ currentLanguageName }}
+        </a>
+        <mat-menu #laguauge="matMenu">
+            <!-- English language option -->
+            <button *ngIf="currentLanguage !== 'en'" (click)="switchLanguage('en')" mat-menu-item>
+                {{ 'english' | translate }}
+            </button>
+            <!-- French language option -->
+            <button *ngIf="currentLanguage !== 'fr'" (click)="switchLanguage('fr')" mat-menu-item>
+                {{ 'french' | translate }}
+            </button>
+            <!-- Arabic language option -->
+            <button *ngIf="currentLanguage !== 'ar'" (click)="switchLanguage('ar')" mat-menu-item>
+                {{ 'arabic' | translate }}
+            </button>
+        </mat-menu>
+    </mat-toolbar>
+</div>

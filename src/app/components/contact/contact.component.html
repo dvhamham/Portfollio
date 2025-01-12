@@ -1,0 +1,37 @@
+<div class="container contact p-4">
+    <!-- Header -->
+    <h5 class="mb-4 mt-2">{{ 'contact_me' | translate }}</h5>
+
+    <!-- Full Name Input Field -->
+    <mat-form-field class="w-100 mb-2">
+        <mat-label>{{ 'contact_full_name' | translate }}</mat-label>
+        <input maxlength="35" class="rounded-2" matInput placeholder="Your Full Name" [formControl]="fullName" />
+        <mat-error *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)">
+            {{ updateErrorMessage(fullName) }}
+        </mat-error>
+    </mat-form-field>
+
+    <!-- Email Input Field -->
+    <mat-form-field class="w-100 mb-2">
+        <mat-label>{{ 'enter_your_email' | translate }}</mat-label>
+        <input class="rounded-2" matInput placeholder="your@email.com" [formControl]="email" />
+        <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
+            {{ updateErrorMessage(email) }}
+        </mat-error>
+    </mat-form-field>
+
+
+    <!-- Message Input Field -->
+    <mat-form-field class="w-100 mb-2">
+        <mat-label>{{ 'your_message' | translate }}</mat-label>
+        <textarea (input)="onInputChange($event)" maxlength="1000" class="rounded-2"
+            style="min-height: 150px; max-height: 400px;" matInput [formControl]="message"></textarea>
+        <mat-error *ngIf="message.invalid && (message.dirty || message.touched)">
+            {{ updateErrorMessage(message) }}
+        </mat-error>
+        <mat-hint align="end">{{ messagetLength }}/1000</mat-hint>
+    </mat-form-field>
+
+    <!-- Submit Button -->
+    <button (click)="onSubmit()" mat-flat-button [disabled]="!isFormValid()">Send Message</button>
+</div>

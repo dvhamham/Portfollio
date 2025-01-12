@@ -1,0 +1,15 @@
+@use '@angular/material' as mat;
+
+// Styling for front-end skills
+.front {
+    @include mat.progress-bar-overrides((active-indicator-color: #2e86de, // Blue active bar
+            track-color: #54a0ff, // Light blue track
+        ));
+}
+
+// Styling for back-end skills
+.back {
+    @include mat.progress-bar-overrides((active-indicator-color: #e66767, // Red active bar
+            track-color: #ea8685, // Light red track
+        ));
+}

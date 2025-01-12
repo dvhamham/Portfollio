@@ -1,0 +1,22 @@
+<!-- Main container for the skills display -->
+<div class="container">
+    <div class="row">
+        <!-- Column for front-end skills -->
+        <div class="col-sm-12 col-md-6 front">
+            <!-- Iterate through the 'front' skills array and display each skill with a progress bar -->
+            <div *ngFor="let skil of front" class="mb-4">
+                <span>{{ skil.name }}</span>
+                <mat-progress-bar value="{{ skil.value }}" mode="buffer"></mat-progress-bar>
+            </div>
+        </div>
+
+        <!-- Column for back-end skills -->
+        <div class="col-sm-12 col-md-6 back">
+            <!-- Iterate through the 'back' skills array and display each skill with a progress bar -->
+            <div *ngFor="let skil of back" class="mb-4">
+                <span>{{ skil.name }}</span>
+                <mat-progress-bar color="accent" value="{{ skil.value }}" mode="buffer"></mat-progress-bar>
+            </div>
+        </div>
+    </div>
+</div>

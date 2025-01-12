@@ -1,0 +1,41 @@
+<footer>
+    <div class="container d-flex align-items-center h-100">
+        <!-- Material Toolbar for footer content -->
+        <mat-toolbar style="background-color: transparent;">
+            <!-- Copyright icon -->
+            <mat-icon class="me-2">copyright</mat-icon>
+
+            <!-- Current year with translation support -->
+            <span class="fs-5 mx-2 text-center">
+                {{ currentYear }} {{ 'copyright' | translate }}
+            </span>
+
+            <!-- Spacer (flexible space) for larger screens (hidden on smaller screens) -->
+            <span class="d-none d-md-flex" style="flex: 1 1 auto;"></span>
+
+            <!-- Social media links, visible only on medium and larger screens -->
+            <div class="d-none d-md-flex">
+                <!-- LinkedIn Link -->
+                <a target="_blank" mat-button href="https://www.linkedin.com/in/dvhamham/" class="rounded-3 fs-6">
+                    {{ 'linkedin' | translate }}
+                </a>
+
+                <!-- Divider between links -->
+                <span class="mx-1 d-flex align-items-center text-secondary">|</span>
+
+                <!-- Facebook Link -->
+                <a target="_blank" mat-button href="https://www.facebook.com/dvhamham" class="rounded-3 fs-6">
+                    {{ 'facebook' | translate }}
+                </a>
+
+                <!-- Divider between links -->
+                <span class="mx-1 d-flex align-items-center text-secondary">|</span>
+
+                <!-- WhatsApp Link -->
+                <a target="_blank" mat-button href="https://wa.me/212670758085" class="rounded-3 fs-6">
+                    {{ 'whatsapp' | translate }}
+                </a>
+            </div>
+        </mat-toolbar>
+    </div>
+</footer>

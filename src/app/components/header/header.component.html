@@ -1,0 +1,29 @@
+<!-- Section containing the header content -->
+<section class="position-relative overflow-hidden">
+    <div class="container h-100">
+        <div class="row pt-4 fs-5 position-relative">
+            <!-- Display translated text for 'my_name' -->
+            <div class="col-12 text-center pt-4 fw-medium">{{ 'my_name' | translate }}</div>
+
+            <!-- Display translated text for 'tsdi' -->
+            <div class="col-12 text-center pt-4">{{ 'tsdi' | translate }}</div>
+
+            <!-- CV and Contact buttons -->
+            <div class="col-12 text-center pt-5">
+                <div class="d-flex justify-content-center">
+                    <!-- Link to download CV -->
+                    <a target="_blank" href="files/Mohammed Hamham.pdf" mat-raised-button
+                        class="bg-warning text-black rounded-1">{{ 'cv' | translate }}</a>
+
+                    <!-- Spacer between buttons -->
+                    <span class="px-2"></span>
+
+                    <!-- Button to open the contact bottom sheet -->
+                    <a (click)="openContact()" mat-raised-button class="bg-info text-black rounded-1">
+                        {{ 'contact' | translate }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

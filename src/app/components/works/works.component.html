@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <!-- Looping through the 'img' array to display work items -->
+        <div class="col-sm-12 col-md-4" *ngFor="let work of img; trackBy: trackByFn">
+            <mat-card class="p-2 mb-4 rounded-2" appearance="outlined">
+                <!-- Displaying the work image -->
+                <img mat-card-image [src]="work.url" alt="Work Image">
+
+                <!-- Content below the image -->
+                <mat-card-content class="mt-4 d-flex">
+                    <mat-icon aria-hidden="false" fontIcon="link"></mat-icon>
+                    <p class="mx-2">
+                        {{ 'in_devlopement' | translate }}
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

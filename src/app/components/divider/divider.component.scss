@@ -1,0 +1,14 @@
+// Styles for the Divider Component
+
+// Angular Material divider styling
+mat-divider {
+    border-color: #b0bec5 !important; // Custom light gray border color
+}
+
+// Styling for the header text
+h2 {
+    width: 400px; // Fixed width for consistent layout
+    background-color: #fef8fc; // Light pink background to highlight the text
+    text-align: center; // Align text to the center
+    margin: -20px auto 0; // Negative top margin to overlap with the divider
+}

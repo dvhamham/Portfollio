@@ -1,0 +1,33 @@
+// Styles for the section container
+section {
+    background-color: #b0bec5; // Light gray background
+    height: 300px; // Fixed height for the section
+    position: relative; // To position pseudo-element relative to this section
+    overflow: hidden; // Hide content that overflows the section
+}
+
+// Rotating background effect using a pseudo-element
+section::before {
+    content: ""; // Empty content for the pseudo-element
+    z-index: 1; // Ensure the pseudo-element is above the background but behind other content
+    position: absolute; // Position the pseudo-element absolutely within the section
+    width: 100vmax; // Extend to maximum viewport width
+    height: 100vmax; // Extend to maximum viewport height
+    display: block;
+    top: 0; // Start at the top of the section
+    background: rgba(0, 0, 0, 0.05); // Very light black overlay
+    animation: rotateBackground 50s linear infinite; // Slow, infinite rotation animation
+    animation-direction: reverse; // Reverse the rotation direction
+    transform-origin: center; // Rotate around the center of the element
+}
+
+// Keyframes for rotating background animation
+@keyframes rotateBackground {
+    0% {
+        transform: rotate(0deg); // Start at 0 degrees
+    }
+
+    100% {
+        transform: rotate(1turn); // Complete one full rotation
+    }
+}

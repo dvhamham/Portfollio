@@ -1,0 +1,22 @@
+mat-card {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: white;
+
+    mat-list {
+        min-height: 305px; // Minimum height for the feature list inside the card
+    }
+
+    .iconCard {
+        font-size: 60px; // Size of the icons inside the cards
+        display: flex;
+        height: 100px; // Height for the icon container
+        width: 100%; // Full width for the icon container
+        justify-content: center; // Center the icon horizontally
+        align-items: center; // Center the icon vertically
+    }
+}
+
+mat-card:hover {
+    transform: translateY(0px); // Slightly lift the card on hover
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); // Add shadow to card on hover
+}

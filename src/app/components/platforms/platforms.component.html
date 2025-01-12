@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <!-- Loop over each platform in the platforms array -->
+        <div *ngFor="let platform of platforms" class="col-sm-12 col-md-4">
+            <mat-card class="p-2 mb-4 rounded-2" appearance="outlined">
+                <!-- Card Content Section -->
+                <mat-card-content class="mt-4 d-flex">
+                    <!-- Platform icon with dynamic color -->
+                    <mat-icon [ngStyle]="{color: platform.iconColor}" class="me-2" aria-hidden="false">
+                        check_circle
+                    </mat-icon>
+                    <!-- Platform name with translation -->
+                    <h4 class="me-2">
+                        {{ platform.name | translate }}
+                    </h4>
+                    <!-- Platform title with translation -->
+                    <span class="mx-2">( {{ platform.title | translate }} )</span>
+                </mat-card-content>
+
+                <!-- Divider under the card content -->
+                <mat-divider class="mt-3 mb-2 border-success w-75"></mat-divider>
+
+                <!-- Card Actions (button for account management) -->
+                <mat-card-actions>
+                    <button class="rounded-3" mat-button>
+                        {{ 'platforms_account' | translate }}
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
