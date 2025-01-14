@@ -29,7 +29,9 @@
         <mat-error *ngIf="message.invalid && (message.dirty || message.touched)">
             {{ updateErrorMessage(message) }}
         </mat-error>
+        <mat-hint align="start">Please include your phone number</mat-hint>
         <mat-hint align="end">{{ messagetLength }}/1000</mat-hint>
+
     </mat-form-field>
 
     <!-- Submit Button -->

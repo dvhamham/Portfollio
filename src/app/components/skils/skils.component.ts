@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './skils.component.scss' // SCSS file for styles
 })
 export class SkilsComponent {
+
+
   // Front-end skills with their names and progress values
   front = [
     { name: 'HTML', value: 99 },

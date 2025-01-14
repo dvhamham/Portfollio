@@ -5,8 +5,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from '../header/header.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core'; // For internationalization
+import { ContactComponent } from '../contact/contact.component';
+import { MatBottomSheet } from '@angular/material/bottom-sheet'; // Angular Material bottom sheet service
 
 // Define interface for pricing items
 interface PricingItem {
@@ -32,7 +34,22 @@ interface PricingItem {
 })
 export class PricingComponent {
 
-  @ViewChild(HeaderComponent) headerComponent!: HeaderComponent;  // Access the HeaderComponent
+  constructor(private _bottomSheet: MatBottomSheet, private translate: TranslateService) { }
+
+  /**
+   * Opens the ContactComponent in a bottom sheet.
+   * Configuration includes custom CSS class, backdrop settings, and data passing.
+   */
+  openContact(): void {
+    this._bottomSheet.open(ContactComponent, {
+      panelClass: 'custom-bottom-sheet', // Apply custom CSS class to the panel
+      hasBackdrop: true, // Enable a backdrop behind the bottom sheet
+      direction: (localStorage.getItem('selectedLanguage') || this.translate.getBrowserLang()) === 'ar' ? 'rtl' : 'ltr',
+      disableClose: false, // Allow closing by clicking outside the sheet
+      data: { message: 'Hello from Bottom Sheet' }, // Data to pass to the ContactComponent
+    });
+  }
+
 
   // Pricing plans data
   pricing = [

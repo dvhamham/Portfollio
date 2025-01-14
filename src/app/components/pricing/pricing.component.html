@@ -38,7 +38,7 @@
                 <!-- Card Actions (Buttons) -->
                 <mat-card-actions>
                     <!-- Work button, translated text -->
-                    <button class="rounded-3" mat-button>{{ 'pricing_work' | translate
+                    <button (click)="openContact()" class="rounded-3" mat-button>{{ 'pricing_work' | translate
                         }}</button>
                     <!-- Share button, translated text -->
                     <button class="rounded-3" mat-button>{{ 'share_work' | translate }}</button>
