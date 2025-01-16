@@ -1,6 +1,6 @@
-<div class="container contact p-4">
+<div class="container contact p-lg-3">
     <!-- Header -->
-    <h5 class="mb-4 mt-2">{{ 'contact_me' | translate }}</h5>
+    <h5 class="mb-4 mt-1">{{ 'contact_me' | translate }}</h5>
 
     <!-- Full Name Input Field -->
     <mat-form-field class="w-100 mb-2">
@@ -25,7 +25,7 @@
     <mat-form-field class="w-100 mb-2">
         <mat-label>{{ 'your_message' | translate }}</mat-label>
         <textarea (input)="onInputChange($event)" maxlength="1000" class="rounded-2"
-            style="min-height: 150px; max-height: 400px;" matInput [formControl]="message"></textarea>
+            style="min-height: 100px; max-height: 400px;" matInput [formControl]="message"></textarea>
         <mat-error *ngIf="message.invalid && (message.dirty || message.touched)">
             {{ updateErrorMessage(message) }}
         </mat-error>
@@ -35,5 +35,5 @@
     </mat-form-field>
 
     <!-- Submit Button -->
-    <button (click)="onSubmit()" mat-flat-button [disabled]="!isFormValid()">Send Message</button>
+    <button class="my-2" (click)="onSubmit()" mat-flat-button [disabled]="!isFormValid()">Send Message</button>
 </div>

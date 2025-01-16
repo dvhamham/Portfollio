@@ -8,7 +8,7 @@ mat-divider {
 // Styling for the header text
 h2 {
     width: 400px; // Fixed width for consistent layout
-    background-color: #fef8fc; // Light pink background to highlight the text
+    background-color: var(--mat-sys-surface); // Light pink background to highlight the text
     text-align: center; // Align text to the center
     margin: -20px auto 0; // Negative top margin to overlap with the divider
 }

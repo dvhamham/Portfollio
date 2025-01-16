@@ -119,9 +119,12 @@ export class ContactComponent {
           if (response.status == "success") {
             alert("Your message has been sent successfully!");
           }
+          console.log(response);
         },
         error: (error) => {
           console.error('Error occurred:', error);
+          console.log(error);
+
         },
         complete: () => {
           console.log('Request completed');
